@@ -76,7 +76,11 @@ Document Structure
 * Chapter 9
   * Implementation
     * Libraries
-    * Notes
+      * Librosa
+      * PyTorch
+      * TorchAudio
+  * Source Code
+    * Running Instructions
 * Chapter 10
   * Results
     * Quantified Losses
