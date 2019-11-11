@@ -21,21 +21,19 @@ Document Structure
   * Audio/Speech Properties
 * Chapter 3
   * Fourier Transform
-  * Discrete Fourier Transform
+    * Discrete Fourier Transform
+    * Spectrums
   * Short-Time Fourier Transform
-  * Spectrograms
+  * Wavelet (Scaleograph)
 * Chapter 4
   * Spectrograms
-    * Linear Spectrograms
-    * Log Spectrograms
-  * Mel-bins
-    * Mel-Filters
-    * MFCC Spectrograms
+  * Linear vs Log
+    * Amplitude vs Decibels
+    * Mel-Bin
   * The Phase Problem
     * Linear
-    * Log
+    * Decibel
     * Mel-bin
-    * MFCC
   * Phase Retrieval Tecniques
     * Phase Storage
     * Griffin-lin Algorithm
@@ -63,6 +61,7 @@ Document Structure
 * Chapter 7
   * Current SoTA with AI
   * Feature Extraction and Normalization
+    * Do Spectrograms belong in AI?
   * Data Augmentation
   * Targets and Masks
 * Chapter 8
