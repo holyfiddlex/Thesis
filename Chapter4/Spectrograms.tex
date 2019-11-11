@@ -11,8 +11,8 @@
 
 \begin{document}
 
-\chapter{}
-\section{Spectrograms}
+\chapter{Spectrograms}
+
 \qquad As we saw before, audio can be better represented as mix of different frequencies that define the sound we are hearing. The problem lies in the fact that, in speech, these frequencies change drastically during each conversation, sentence, word and syllable! This means that the perfect spectrogram would need to be a continuous representation of each moment of time and for every frequency.
 \par
 This is impossible for various reasons, one being the limitations of computational representations, which forces us to make a discrete representation instead. But even if that wasn’t the case, the fourier transform doesn’t work on single points in time, instead it works on entire signals. That said, we can use the short time fourier transform to give us a spectrogram that is discrete in time. Combined with the discrete fourier transform, we will also have a discrete representation in the frequency axis.
@@ -24,7 +24,7 @@ Although this is a great step forward to giving us a better representation of au
 The exception to this being Speech Recognition, but even so they haven’t been heavily studied. There are few papers and datasets that can be used to prove when some parameters are better than others or if there are conservitive settings that tend to work consistently in all problems. In the end, some authors question if spectrograms are even the representation that we are looking for for various reasons that we will see in more detail later in Chapter 7.
 \par
 For now we'll hide our skepticism and focus on the advantages of using spectrograms. The spectrograms we have been referring to so far are what are called linear-spectrograms. Although these are the simplest and easiest to implement, it is not the only one. We will mention the difference between Amplitude and Decibel Spectrograms as well as Frequency and Mel-Bin Spectrograms.
-\subsection{Amplitude vs Decibel}
+\section{Linear and Log}
 \qquad The values in amplitude are represented in the “color” dimension, giving us the intensities that we see in the spectrogram image. As we saw in the Second Chapter, the amplitude tells us the strength of the signal. In the spectrogram, however, there may also be a phase value. This is because the signals tend to be represented as a Complex number, which can be expressed in cartesian or polar coordinates.
 \par
 Chapter4AmplitudeVsDecibel\_1
