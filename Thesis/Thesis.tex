@@ -2,8 +2,8 @@
 \usepackage{color}
 \usepackage{hyperref}
 \usepackage{graphicx}
+\usepackage[toc,page]{appendix}
 \usepackage[left=4cm, right=4cm, top=3cm]{geometry}
-
 \hypersetup{colorlinks=true, linkcolor=blue}
 \hypersetup{urlcolor=blue}
 \hypersetup{citecolor=red}
@@ -65,8 +65,8 @@
     \vspace{0.9cm}
     \textbf{Abstract}
 \end{center}
-
-\chapter{Introduction}
+\part{Introduction}
+\chapter{Authors Notes}
 
 \qquad Imagine being in a public area with one of your friends. As you talk about your work and what you learned in school there are people around you making noise. They’re also talking about their lives, what they plan on doing in the mall or the movie that just came out. Kids laughing with their parents talking, nearby traffic with car horns flaring in the distance. If you wanted to, you could hear them, but instead you ignore it.
 \par
@@ -160,6 +160,53 @@ We could also consider the number of speakers as a constraint, since having only
 \par
 Another constraint that could be considered is that we only need to listen to one voice. If you use a hypothetical “perfect” model to separate voices and listen to your friend in a crowded cocktail party, you have little to no interest in listening to other people's conversations. Although this could definitely be easier and give better results, we go back to what we mentioned before when we introduced the cocktail party. This constraint in reality mentions a problem with attention, which for now we are considering a different problem.
 
+\part{Methodology}
+\chapter{Literature Review}
+  \section{Current SoTA with AI}
+    \subsection{Speech Recognition}
+    \subsection{Speech Separation}
+      \subsubsection{Looking to Listen}
+  \section{Feature Extraction and Normalization}
+    \subsection{Do Spectrograms belong in AI?}
+  \section{Data Augmentation}
+  \section{Targets and Masks}
+
+\chapter{Methodology}
+  \section{Computer Requirements}
+  \section{Dataset}
+  \section{Preprocessing}
+  \section{Model}
+  \section{Targets}
+  \section{Error}
+
+\chapter{Implementation}
+  \section{Libraries}
+    \subsection{Librosa}
+    \subsection{PyTorch}
+    \subsection{TorchAudio}
+  \section{Source Code}
+    \subsection{Running Instructions}
+
+
+\part{Results}
+\chapter{Results}
+  \section{Initial Dataset}
+    \subsection{Quantified Losses}
+    \subsection{Quality Tests}
+    \subsection{Samples (images and audios)}
+  \section{Transfer learning}
+    \subsection{Quantified Losses}
+    \subsection{Quality Tests}
+    \subsection{Samples (images and audios)}
+  \section{Transfer Learning with fine tuning}
+    \subsection{Quantified Losses}
+    \subsection{Quality Tests}
+    \subsection{Samples (images and audios)}
+
+\chapter{Discussion}
+  \section{Future Work}
+
+\begin{appendices}
 \chapter{Time Series}
   \section{Signal Processing}
   \section{Speech Properties}
@@ -225,49 +272,7 @@ For now we'll hide our skepticism and focus on the advantages of using spectrogr
   \section{Segmentation}
     \subsection{Medicine}
     \subsection{U-Net}
-
-\chapter{Literature Review}
-  \section{Current SoTA with AI}
-    \subsection{Speech Recognition}
-    \subsection{Speech Separation}
-      \subsubsection{Looking to Listen}
-  \section{Feature Extraction and Normalization}
-    \subsection{Do Spectrograms belong in AI?}
-  \section{Data Augmentation}
-  \section{Targets and Masks}
-
-\chapter{Methodology}
-  \section{Computer Requirements}
-  \section{Dataset}
-  \section{Preprocessing}
-  \section{Model}
-  \section{Targets}
-  \section{Error}
-
-\chapter{Implementation}
-  \section{Libraries}
-    \subsection{Librosa}
-    \subsection{PyTorch}
-    \subsection{TorchAudio}
-  \section{Source Code}
-    \subsection{Running Instructions}
-
-\chapter{Results}
-  \section{Initial Dataset}
-    \subsection{Quantified Losses}
-    \subsection{Quality Tests}
-    \subsection{Samples (images and audios)}
-  \section{Transfer learning}
-    \subsection{Quantified Losses}
-    \subsection{Quality Tests}
-    \subsection{Samples (images and audios)}
-  \section{Transfer Learning with fine tuning}
-    \subsection{Quantified Losses}
-    \subsection{Quality Tests}
-    \subsection{Samples (images and audios)}
-
-\chapter{Discussion}
-  \section{Future Work}
+\end{appendices}
 
 \bibliography{Thesis}
 \bibliographystyle{ieeetr}

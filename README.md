@@ -6,24 +6,17 @@ Document Structure
 * Title Page
 * Table of Contents
 * Abstract
+
 * Chapter 0 (Introdutions)
-  * History
+  * Structure of Document
+## Part 1
 * Chapter 1 (The Cocktail Party Problem)
+  * Historic Background
   * Segmentation vs Attention Problem
   * Inverse Problems
   * Ill-Posed Problems
   * Constraints
-* Chapter 2 (Time Series)
-  * Signal Processing
-  * Audio/Speech Properties
-* Chapter 3 (Transforms)
-  * Fourier Transform
-    * Spectrums
-    * Discrete Fourier Transform
-    * Short-Time Fourier Transform
-  * Wavelet
-    * Scaleograph
-* Chapter 4 (Spectrograms)
+* Chapter 2 (Spectrograms)
   * Linear vs Log
     * Amplitude vs Decibels
     * Mel-Bin
@@ -35,7 +28,42 @@ Document Structure
     * Phase Storage
     * Griffin-lin Algorithm
     * Vocoders
-* Chapter 5 (Machine Learning)
+  * Feature Extraction and Normalization
+## Part 2 (Methodology)
+* Chapter 3 (Previous Work)
+  * Speech Recognition
+  * Speech Separation
+    * Looking to Listen
+    * Music-Speech
+* Chapter 4 (Libraries)
+  * Librosa
+  * PyTorch
+  * TorchAudio
+* Chapter 4 (Implementation)
+  * Original Structure
+  * Changes
+  * 
+
+## Part 3
+* Chapter 5 (Results)
+  * Results
+    * Quantified Losses
+    * Quality Tests
+    * Samples (images and audios)
+  * Transfer Learning
+    * Quantified Losses
+    * Quality Tests
+    * Samples (images and audios)
+  * Transfer Learning with fine tuning
+    * Quantified Losses
+    * Quality Tests
+    * Samples (images and audios)
+* Chapter 6 (Discussion)
+  * Furture Work
+
+# Appendix
+
+* Machine Learning
   * Supervised Learning vs Unsupervised Learning
   * Advancements
   * Problems
@@ -44,7 +72,8 @@ Document Structure
     * Overfitting
     * Hyper-parameters
     * Computation
-* Chapter 6 (Deep Learning)
+
+* Deep Learning
   * Neural Networks
     * Structure
       * Inputs
@@ -59,41 +88,18 @@ Document Structure
   * Segmentation
     * Medicine
     * Unet
-* Chapter 7 (Literature Review)
-  * Current SoTA with AI
-    * Speech Recognition
-    * Speech Separation
-      * Looking to Listen
-  * Feature Extraction and Normalization
-    * Do Spectrograms belong in AI?
-  * Data Augmentation
-  * Targets and Masks
-* Chapter 8 (Methodology)
-  * Computer Requirements
-  * Dataset
-  * Preprocessing
-  * Model
-  * Targets
-  * Error
-* Chapter 9 (Implementation)
-  * Libraries
-    * Librosa
-    * PyTorch
-    * TorchAudio
-  * Source Code
-    * Running Instructions
-* Chapter 10 (Results)
-  * Results
-    * Quantified Losses
-    * Quality Tests
-    * Samples (images and audios)
-  * Transfer Learning
-    * Quantified Losses
-    * Quality Tests
-    * Samples (images and audios)
-  * Transfer Learning with fine tuning
-    * Quantified Losses
-    * Quality Tests
-    * Samples (images and audios)
-* Chapter 11 (Discussion)
-  * Furture Work
+
+* Time Series
+  * Signal Processing
+  * Audio/Speech Properties
+
+* Transforms
+  * Fourier Transform
+    * Spectrums
+    * Discrete Fourier Transform
+    * Short-Time Fourier Transform
+  * Wavelet
+    * Scaleograph
+
+* Source Code
+  * Running Instructions
