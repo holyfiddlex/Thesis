@@ -8,11 +8,11 @@ Document Structure
 * Abstract
 * Chapter 0 (Introdutions)
   * History
-  * Acknowledgements
 * Chapter 1 (The Cocktail Party Problem)
   * Segmentation vs Attention Problem
-  * Ill-Posed Problems
   * Inverse Problems
+  * Ill-Posed Problems
+  * Constraints
 * Chapter 2 (Time Series)
   * Signal Processing
   * Audio/Speech Properties
