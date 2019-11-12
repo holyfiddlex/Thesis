@@ -31,7 +31,7 @@ Document Structure
     * Linear
     * Decibel
     * Mel-bin
-  * Phase Retrieval Tecniques
+  * Phase Retrieval Techniques
     * Phase Storage
     * Griffin-lin Algorithm
     * Vocoders
@@ -51,6 +51,7 @@ Document Structure
       * Weights
       * Bias
     * Back-propagation Algorithm
+      * Forward Propagation
       * Gradients
   * Image processing
     * Convolutional Neural Networks
@@ -62,6 +63,7 @@ Document Structure
   * Current SoTA with AI
     * Speech Recognition
     * Speech Separation
+      * Looking to Listen
   * Feature Extraction and Normalization
     * Do Spectrograms belong in AI?
   * Data Augmentation
@@ -94,5 +96,4 @@ Document Structure
     * Quality Tests
     * Samples (images and audios)
 * Chapter 11 (Discussion)
-  * Discussion
   * Furture Work

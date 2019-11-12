@@ -1,0 +1,195 @@
+\documentclass{book}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage[left=4cm, right=4cm, top=3cm]{geometry}
+
+\hypersetup{colorlinks=true, linkcolor=blue}
+\hypersetup{urlcolor=blue}
+\hypersetup{citecolor=red}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{1em}
+
+
+
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+ 
+        \Huge
+        \textbf{Exploring the Cocktail Party}
+ 
+        \vspace{0.5cm}
+        \LARGE
+        A review of 
+ 
+        \vspace{1.5cm}
+ 
+        \textbf{Héctor M. de la Rosa Prado}
+ 
+        \vfill
+ 
+        A thesis presented for the degree of\\
+        Bachelor in IT in Science
+ 
+        \vspace{0.8cm}
+ 
+        % \includegraphics[width=0.4\textwidth]{university}
+ 
+        \Large
+        Department Name\\
+        National Autonomous University of Mexico\\
+        Mexico\\
+        \today
+ 
+    \end{center}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\thispagestyle{plain}
+\begin{center}
+    \Large
+    \textbf{Thesis Title}
+ 
+    \vspace{0.4cm}
+    \large
+    Thesis Subtitle
+ 
+    \vspace{0.4cm}
+    \textbf{Héctor M. de la Rosa Prado}
+ 
+    \vspace{0.9cm}
+    \textbf{Abstract}
+\end{center}
+
+\chapter{Introduction}
+
+\qquad Imagine being in a public area with one of your friends. As you talk about your work and what you learned in school there are people around you making noise. They’re also talking about their lives, what they plan on doing in the mall or the movie that just came out. Kids laughing with their parents talking, nearby traffic with car horns flaring in the distance. If you wanted to, you could hear them, but instead you ignore it.
+\par
+You continue to listen to your friend, regardless of the noise in the background. You have no problem paying attention until suddenly you hear your name being mentioned in the crowd. For some reason, somewhere, someone said your name. You look around to see a familiar face walking towards you…
+\par
+What we described in the short and imaginary story above is what is called the “Cocktail Party Effect”. This effect was first coined by Cherry Colin\cite{Cherry} where he proposed a series of tests that would measure the limits of a human’s ability to listen to a specific voice under different circumstances. The problem of getting a machine to do this same task was called the Cocktail Party Problem by Cherry.
+\par
+The cocktail party problem is one of the biggest unsolved problems in computation. The short and imaginary story above gives us an example of how we, as humans, solve this problem in a seemingly effortless way. Thanks to evolution, humans can it so effortless, in fact, that most people don’t even stop to appreciate how complicated the task actually is.
+\par
+Its difficulty, however, is not the reason it is so widely studied. In fact, this small problem seems to be the barrier that has kept us from advancing in the automation of automation, or at least in the way we would like. The cocktail party is not only present in sound, but in just about any signal processing problem, from medical scanning to telecommunications\cite{CocktailPartyProblemRevisit}, noise always seems to find its way into our sensors.
+\par
+That is why a general solution to this problem will not only allow us to improve greatly in audio related tasks, such as speech recognition, transcriptions, audio classification, and audio/speech enhancements, but also in various fields like medical analysis and seismology. The reach of these advancements also promises a wide range of new technologies shortly after.
+\par
+This is why, in this work, we will attempt to take a dive into how we can leverage the current improvements in artificial intelligence in tackling the problem. Ever since the latest boom of deep learning \cite{DeepLearning}
+\par
+Even though, as we saw before, the problem generalizes beyond speech, we will limit our research to stick with voiced data. This is due to the complexity in examining signals as a whole, and because of the focus that most methods currently have on the subject.
+\par
+Given how the difficulty of the problem lays much beyond my current limits as a researcher we will not show. We will accept limiting our problem greatly for practical reasons, in an attempt to get insight on . This also includes a review of how traditional methods attempt to solve the problem
+
+  \section{History}
+  \section{Acknowledgements}
+
+\chapter{The Cocktail Party Problem}
+  \section{Segmentation vs Attention Problem}
+  \section{Ill-Posed Problems}
+  \section{Inverse Problems}
+
+\chapter{Time Series}
+  \section{Signal Processing}
+  \section{Speech Properties}
+
+\chapter{Transforms}
+  \section{Fourier Transform}
+    \subsection{Spectrums}
+    \subsection{Discrete Fourier Transform}
+    \subsection{Short-Time Fourier Transform}
+  \section{Wavelet}
+
+\chapter{Spectrograms}
+  \section{Linear vs Log}
+    \subsection{Amplitude vs Decibels}
+    \subsection{Mel-Bins}
+  \section{The Phase Problem}
+    \subsection{Linear}
+    \subsection{Decibel}
+    \subsection{Mel-bin}
+  \section{Phase Retrieval Techniques}
+    \subsection{Phase Storage}
+    \subsection{Griffin-lin Algorithm}
+    \subsection{Vocoders}
+
+\chapter{Machine Learning}
+  \section{Supervised vs Unsupervised Learning}
+    \subsection{Supervised Learning}
+    \subsection{Unsupervised Learning}
+  \section{Advancements}
+    \subsection{AREAS**}
+  \section{Problems}
+    \subsection{Data}
+    \subsection{Interpretability}
+    \subsection{Overfitting}
+    \subsection{Hyper-parameters}
+    \subsection{Computation}
+
+\chapter{Deep Learning}
+  \section{Neural Networks}
+    \subsection{Structure}
+      \subsubsection{Inputs}
+      \subsubsection{Weights}
+      \subsubsection{Bias}
+    \subsection{Back-Propagation Algorithm}
+      \subsubsection{Forward Propagation}
+      \subsubsection{Gradients}
+  \section{Image Processing}
+    \subsection{Convolutional Neural Networks}
+    \subsection{Attention}
+  \section{Segmentation}
+    \subsection{Medicine}
+    \subsection{U-Net}
+
+\chapter{Literature Review}
+  \section{Current SoTA with AI}
+    \subsection{Speech Recognition}
+    \subsection{Speech Separation}
+      \subsubsection{Looking to Listen}
+  \section{Feature Extraction and Normalization}
+    \subsection{Do Spectrograms belong in AI?}
+  \section{Data Augmentation}
+  \section{Targets and Masks}
+
+\chapter{Methodology}
+  \section{Computer Requirements}
+  \section{Dataset}
+  \section{Preprocessing}
+  \section{Model}
+  \section{Targets}
+  \section{Error}
+
+\chapter{Implementation}
+  \section{Libraries}
+    \subsection{Librosa}
+    \subsection{PyTorch}
+    \subsection{TorchAudio}
+  \section{Source Code}
+    \subsection{Running Instructions}
+
+\chapter{Results}
+  \section{Initial Dataset}
+    \subsection{Quantified Losses}
+    \subsection{Quality Tests}
+    \subsection{Samples (images and audios)}
+  \section{Transfer learning}
+    \subsection{Quantified Losses}
+    \subsection{Quality Tests}
+    \subsection{Samples (images and audios)}
+  \section{Transfer Learning with fine tuning}
+    \subsection{Quantified Losses}
+    \subsection{Quality Tests}
+    \subsection{Samples (images and audios)}
+
+\chapter{Discussion}
+  \section{Future Work}
+
+\bibliography{Thesis}
+\bibliographystyle{ieeetr}
+\end{document}
