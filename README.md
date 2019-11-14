@@ -7,7 +7,7 @@ Document Structure
 * Table of Contents
 * Abstract
 
-* Chapter 0 (Introdutions)
+* Chapter 0 (Introduction)
   * Structure of Document
 ## Part 1
 * Chapter 1 (The Cocktail Party Problem)
@@ -59,7 +59,7 @@ Document Structure
     * Quality Tests
     * Samples (images and audios)
 * Chapter 6 (Discussion)
-  * Furture Work
+  * Future Work
 
 # Appendix
 
@@ -87,7 +87,7 @@ Document Structure
     * Attention
   * Segmentation
     * Medicine
-    * Unet
+    * U-Net
 
 * Time Series
   * Signal Processing
