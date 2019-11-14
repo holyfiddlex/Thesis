@@ -8,10 +8,11 @@ Document Structure
 * Abstract
 
 * Chapter 0 (Introduction)
-  * Structure of Document
-## Part 1
-* Chapter 1 (The Cocktail Party Problem)
+  * The Cocktail Party Problem
   * Historic Background
+  * Structure of Document
+## Part 1 (Literature Review)
+* Chapter 1 (Speech Separation)
   * Segmentation vs Attention Problem
   * Inverse Problems
   * Ill-Posed Problems
