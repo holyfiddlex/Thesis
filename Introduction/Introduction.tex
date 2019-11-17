@@ -50,6 +50,44 @@ So much so that the problem was formulated decades ago by Colin Cherry\cite{Cher
 In his famous paper he gives an example of the task with a conversation in a Cocktail party, giving the problem its name.
 Over 65 years later one could argue that progress is just now being made in the area, mostly due to the advancements in general learning algorithms, like deep learning, giving an edge in unstructured data analysis.
 \section{Document Structure}
+\qquad In this project we will separate our investigation into three parts.
+The first part will review the current literature on the problem, focusing specifically on current processing methods.
+We then explore how previous studies used these methods and the possible affects this has on the results.
+This will be split into 4 Chapters.
+\par
+Chapter 1 will give a short rundown on the current data processing techniques.
+We will explain why data preprocessing is important and what problems occur without it, focusing on audio tasks.
+This chapter is divided into two parts, the first will touch on feature extraction for audio.
+The second part will touch on Normalization.
+\par
+For feature extraction we will need to learn about Spectrograms.
+The Spectrograms can be separated into two commonly used categories: linear and mel-bin.
+Both spectrograms represent audio clips into a 3-D transformations, similar to images.
+A linear spectrogram has a linear frequency dimension while mel-bins represents frequency in logarithmic scale.
+\par
+Chapter 2 will reference one of the problems we currently have in Generating Audio.
+Here we explain why generating audio directly isn't always possible and what the modern solution for these problems currently looks like.
+The critiques given to these current solutions will be based on the literature and on my own personal experience.
+\par
+Chapters 3 and 4 will talk about recent projects.
+Although these projects do not tackle the problem in the same way, they have reasonably good quality in audio.
+Because of this, we will use these studies as a reference to what practices could be used to provide these results.
+Later on we will see that one uses vocoders and the other changes the training target.
+\par
+At the end of these chapters we will state the pros and cons of each methods and briefly show the train of thought that lead to the experiments that we can find in part 2.
+\par Part two contains the methodology that was taken in this study.
+In this we hope to explain the experiment well enough to be replicated in future studies.
+For this we provide a context of the algorithm and how each process was implemented.
+As we will learn later, the implementation of some of these algorithms which varies in the different libraries affect the outputs similar to the parameters.
+\par
+Finally the third and final part of this text will give the results to the project.
+In this we will explain what the quantified errors represent and a quick qualitative assessment of the audios.
+***As a reminder, we do not plan on building a model that competes against the current SoTA.
+***Instead we will attempt to find input and target creation techniques that improve the quality of the generated audio.
+\par
+The final part of this thesis contains the appendix and the bibliography.
+In the appendix we give most of the theoretical background necessary to understand the methods used in our research.
+This includes subjects ranging from machine learning, signal processing, the fourier and wavelet transform and a small usage guide for the source code and where to find it.
 \bibliography{Introduction}
 \bibliographystyle{ieeetr}
 \end{document}
