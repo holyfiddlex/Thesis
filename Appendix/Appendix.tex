@@ -1,0 +1,121 @@
+\documentclass{book}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage[toc,page]{appendix}
+\usepackage[left=4cm, right=4cm, top=3cm]{geometry}
+
+\hypersetup{colorlinks=true, linkcolor=blue}
+\hypersetup{urlcolor=blue}
+\hypersetup{citecolor=red}
+
+\setlength{\parindent}{2em}
+\setlength{\parskip}{1em}
+\setcounter{chapter}{-1}
+
+\begin{document}
+
+\newcommand{\titlename}{Data Processing for the Cocktail Party Problem}
+\tableofcontents
+\begin{appendices}
+\chapter{Time Series}
+  \section{Signal Processing}
+  \section{Speech Properties}
+
+\chapter{Transforms}
+  \section{Fourier Transform}
+    \subsection{Spectrums}
+    \subsection{Discrete Fourier Transform}
+    \subsection{Short-Time Fourier Transform}
+  \section{Wavelet}
+
+\chapter{Spectrograms}
+\qquad As we saw before, audio can be better represented as mix of different frequencies that define the sound we are hearing. The problem lies in the fact that, in speech, these frequencies change drastically during each conversation, sentence, word and syllable! This means that the perfect spectrogram would need to be a continuous representation of each moment of time and for every frequency.
+\par
+This is impossible for various reasons, one being the limitations of computational representations, which forces us to make a discrete representation instead. But even if that wasn’t the case, the fourier transform doesn’t work on single points in time, instead it works on entire signals. That said, we can use the short time fourier transform to give us a spectrogram that is discrete in time. Combined with the discrete fourier transform, we will also have a discrete representation in the frequency axis.
+\par
+Spectrograms have 3 dimensions, similar to how images are represented, but not exactly. In any given image there are two dimensions that represent space and one that represents intensity. Meanwhile Spectrograms have one dimension for time, one for frequency and the last represents the strength and sometimes the phase of the frequency signal at that time. Although some writers, the standard tends to place frequency as height, time as width and color as signal intensity in a given point.
+\par
+Although this is a great step forward to giving us a better representation of audio, there are still too many parameters that play a role. Each one of these parameters affects how well the spectrogram can correctly contain the information in the audio. Although there are already well established defaults for most human tasks, it still hasn’t been well studied in great part of automated and machine learning tasks.
+\par
+The exception to this being Speech Recognition, but even so they haven’t been heavily studied. There are few papers and datasets that can be used to prove when some parameters are better than others or if there are conservitive settings that tend to work consistently in all problems. In the end, some authors question if spectrograms are even the representation that we are looking for for various reasons that we will see in more detail later in Chapter 7.
+\par
+For now we'll hide our skepticism and focus on the advantages of using spectrograms. The spectrograms we have been referring to so far are what are called linear-spectrograms. Although these are the simplest and easiest to implement, it is not the only one. We will mention the difference between Amplitude and Decibel Spectrograms as well as Frequency and Mel-Bin Spectrograms.
+  \section{Linear and Log}
+\qquad The values in amplitude are represented in the “color” dimension, giving us the intensities that we see in the spectrogram image. As we saw in the Second Chapter, the amplitude tells us the strength of the signal. In the spectrogram, however, there may also be a phase value. This is because the signals tend to be represented as a Complex number, which can be expressed in cartesian or polar coordinates.
+\par
+    \subsection{Amplitude vs Decibels}
+    \subsection{Mel-Bins}
+  \section{The Phase Problem}
+    \subsection{Linear}
+    \subsection{Decibel}
+    \subsection{Mel-bin}
+  \section{Phase Retrieval Techniques}
+    \subsection{Phase Storage}
+    \subsection{Griffin-lin Algorithm}
+    \subsection{Vocoders}
+
+\chapter{Machine Learning}
+\qquad "A machine learning algorithm is an algorithm that is able to learn from data."\cite{DeepLearning}
+These algorithms search for patterns in the data to discover rules of association that could be used to solve the problem without explicit instructions.
+This approach turns out to be better, in various task, than previous hard-encoded methods.
+These older algorithms are usually referred to as traditional methods.
+\par
+Most of the success of machine learning systems stem from the fact that it is hard to give a perfect definition of something.
+To achieve this we would be required to tumble into epistemological questions.
+Most would agree that a definition of a cat would be incomplete without mentioning a tail, yet a cat without a tail is still a cat.
+\section{Supervised vs Unsupervised Learning}
+\qquad Machine Learning algorithms are commonly separated into supervised and unsupervised learning.
+Even though each of these methods have their pros and cons, most of the current study has focused on developing supervised methods.
+Part of the reason is because of how data is currently being collected in the real world.
+\par
+Apart from these two branches of machine learning there is another call "semi" supervised learning\cite{SemiSupervised}.
+This approach uses a mix of labeled and unlabeled data items.
+In real life this allows users to quickly add labels to a dataset.
+This is done with unsupervised methods, which are later "corrected" by a human user which labels the faulty items. 
+\par
+Even though these tools have proven useful in certain problems, including large scale dataset labeling, they are not relevant to this study.
+\subsection{Supervised Learning}
+\qquad Supervised learning methods, as we mentioned before, use labeled datasets as training data.
+This allows the algorithm to repeatedly find patterns which could allow it to gain better insights.
+The training process for these algorithms is similar to a student studying with a mock exam.
+\par
+In this analogy, our mock exam is the same as our dataset.
+Even so, just like in real life, we elaborating a mock exam isn't always easy. How do we provide questions similar to the real test, without making it too similar?
+If you told a class of students that the real exam will be exactly the same as the mock, the students would be less inclined to learn the actual concepts necessary to pass the test (or any similar test).
+Instead, they might try to memorize the answers knowing that this would be enough.
+\par
+This same login is what happens when training an algorithm.
+They don't have a notion of what they are trying to learn but instead what they want to answer.
+A program is (at least until now) unable to understand that the dataset is just a mock, and that the real test comes after.
+What's worse, while a normal student would have problems memorizing tests for very long, a computer store these answers with no additional punishment.
+    \subsection{Unsupervised Learning}
+  \section{Advancements}
+    \subsection{AREAS**}
+  \section{Problems}
+    \subsection{Data}
+    \subsection{Interpretability}
+    \subsection{Overfitting}
+    \subsection{Hyper-parameters}
+    \subsection{Computation}
+
+\chapter{Deep Learning}
+  \section{Neural Networks}
+    \subsection{Structure}
+      \subsubsection{Inputs}
+      \subsubsection{Weights}
+      \subsubsection{Bias}
+    \subsection{Back-Propagation Algorithm}
+      \subsubsection{Forward Propagation}
+      \subsubsection{Gradients}
+  \section{Image Processing}
+    \subsection{Convolutional Neural Networks}
+    \subsection{Attention}
+  \section{Segmentation}
+    \subsection{Medicine}
+    \subsection{U-Net}
+\end{appendices}
+
+\bibliography{Appendix}
+\bibliographystyle{ieeetr}
+\end{document}
