@@ -8,41 +8,39 @@ Document Structure
 * Abstract
 
 * Chapter 0 (Introduction)
-  * Structure of Document
-## Part 1
-* Chapter 1 (The Cocktail Party Problem)
+  * The Cocktail Party Problem
   * Historic Background
-  * Segmentation vs Attention Problem
-  * Inverse Problems
-  * Ill-Posed Problems
-  * Constraints
-* Chapter 2 (Spectrograms)
-  * Linear vs Log
-    * Amplitude vs Decibels
+    * Segmentation vs Attention Problem
+    * Inverse Problems
+    * Ill-Posed Problems
+    * Constraints
+  * Structure of Document
+## Part 1 (Literature Review)
+* Chapter 1 (Data Processing)
+  * Feature Extraction
+    * Spectrograms
     * Mel-Bin
-  * The Phase Problem
-    * Linear
-    * Decibel
-    * Mel-bin
-  * Phase Retrieval Techniques
+  * Normalization
+* Chapter 2 (The Generation Problem)
+  * Time Series
+    * Wave-net
+  * Phase Loss
     * Phase Storage
-    * Griffin-lin Algorithm
+    * Griffin-lin
     * Vocoders
-  * Feature Extraction and Normalization
+  * Masking Techniques
+* Chapter 3 (Looking to Listen)
+* Chapter 4 (Music-Speech)
 ## Part 2 (Methodology)
-* Chapter 3 (Previous Work)
-  * Speech Recognition
-  * Speech Separation
-    * Looking to Listen
-    * Music-Speech
 * Chapter 4 (Libraries)
   * Librosa
   * PyTorch
   * TorchAudio
 * Chapter 4 (Implementation)
-  * Original Structure
-  * Changes
-  * 
+  * Dataset
+  * Model Structure
+  * Preprocessing
+  * Targets (Tested)
 
 ## Part 3
 * Chapter 5 (Results)
