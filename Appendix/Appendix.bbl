@@ -1,0 +1,13 @@
+\begin{thebibliography}{1}
+
+\bibitem{DeepLearning}
+I.~Goodfellow, Y.~Bengio, and A.~Courville, {\em
+  \href{http://www.deeplearningbook.org}{Deep Learning}}.
+\newblock MIT Press, 2016.
+
+\bibitem{SemiSupervised}
+O.~Chapelle, B.~Schölkopf, and A.~Zien,
+  ``\href{https://mitpress.mit.edu/books/semi-supervised-learning}{Semi-supervised
+  learning explained},'' 2006.
+
+\end{thebibliography}
