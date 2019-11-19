@@ -5,7 +5,9 @@ This project is just a repository to store changes made to my dissertation in th
 Document Structure
 * Title Page
 * Table of Contents
+* Acknowledgements
 * Abstract
+* Preface
 
 * Chapter 0 (Introduction)
   * The Cocktail Party Problem
@@ -32,18 +34,18 @@ Document Structure
 * Chapter 3 (Looking to Listen)
 * Chapter 4 (Music-Speech)
 ## Part 2 (Methodology)
-* Chapter 4 (Libraries)
+* Chapter 5 (Libraries)
   * Librosa
   * PyTorch
   * TorchAudio
-* Chapter 4 (Implementation)
+* Chapter 6 (Implementation)
   * Dataset
   * Model Structure
   * Preprocessing
   * Targets (Tested)
 
 ## Part 3
-* Chapter 5 (Results)
+* Chapter 7 (Results)
   * Results
     * Quantified Losses
     * Quality Tests
@@ -56,10 +58,34 @@ Document Structure
     * Quantified Losses
     * Quality Tests
     * Samples (images and audios)
-* Chapter 6 (Discussion)
+* Chapter 8 (Discussion)
   * Future Work
 
 # Appendix
+
+* Time Series
+  * Signal Processing
+  * Audio/Speech Properties
+
+* Transforms
+  * Fourier Transform
+    * Spectrums
+    * Discrete Fourier Transform
+    * Short-Time Fourier Transform
+  * Wavelet
+    * Scaleograph
+* Spectrograms
+  * Linear and Log
+    * Amplitude vs Decibels
+    * Mel-Bins
+  * The Phase Problem
+    * Linear
+    * Decibel
+    * Mel-Bin
+  * Phase Retrieval Techniques
+    * Phase Storage
+    * Griffin-lin Algorithm
+    * Vocoders
 
 * Machine Learning
   * Supervised Learning vs Unsupervised Learning
@@ -86,18 +112,6 @@ Document Structure
   * Segmentation
     * Medicine
     * U-Net
-
-* Time Series
-  * Signal Processing
-  * Audio/Speech Properties
-
-* Transforms
-  * Fourier Transform
-    * Spectrums
-    * Discrete Fourier Transform
-    * Short-Time Fourier Transform
-  * Wavelet
-    * Scaleograph
 
 * Source Code
   * Running Instructions

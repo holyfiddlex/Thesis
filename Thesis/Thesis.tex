@@ -54,9 +54,8 @@
 \newpage
 \thispagestyle{plain}
 
-\chapter*{}
+\chapter*{Acknowledgements}
 \addcontentsline{toc}{chapter}{Acknowledgements}
-
 \chapter*{}
 \addcontentsline{toc}{chapter}{Abstract}
 \begin{center}
@@ -120,48 +119,7 @@ This also includes a review of how traditional methods attempt to solve the prob
 So much so that the problem was formulated decades ago by Colin Cherry\cite{Cherry}.
 In his famous paper he gives an example of the task with a conversation in a Cocktail party, giving the problem its name.
 Over 65 years later one could argue that progress is just now being made in the area, mostly due to the advancements in general learning algorithms, like deep learning, giving an edge in unstructured data analysis.
-\section{Document Structure}
-\qquad In this project we will separate our investigation into three parts.
-The first part will review the current literature on the problem, focusing specifically on current processing methods.
-We then explore how previous studies used these methods and the possible affects this has on the results.
-This will be split into 4 Chapters.
-\par
-Chapter 1 will give a short rundown on the current data processing techniques.
-We will explain why data preprocessing is important and what problems occur without it, focusing on audio tasks.
-This chapter is divided into two parts, the first will touch on feature extraction for audio.
-The second part will touch on Normalization.
-\par
-For feature extraction we will need to learn about Spectrograms.
-The Spectrograms can be separated into two commonly used categories: linear and mel-bin.
-Both spectrograms represent audio clips into a 3-D transformations, similar to images.
-A linear spectrogram has a linear frequency dimension while mel-bins represents frequency in logarithmic scale.
-\par
-Chapter 2 will reference one of the problems we currently have in Generating Audio.
-Here we explain why generating audio directly isn't always possible and what the modern solution for these problems currently looks like.
-The critiques given to these current solutions will be based on the literature and on my own personal experience.
-\par
-Chapters 3 and 4 will talk about recent projects.
-Although these projects do not tackle the problem in the same way, they have reasonably good quality in audio.
-Because of this, we will use these studies as a reference to what practices could be used to provide these results.
-Later on we will see that one uses vocoders and the other changes the training target.
-\par
-At the end of these chapters we will state the pros and cons of each methods and briefly show the train of thought that lead to the experiments that we can find in part 2.
-\par Part two contains the methodology that was taken in this study.
-In this we hope to explain the experiment well enough to be replicated in future studies.
-For this we provide a context of the algorithm and how each process was implemented.
-As we will learn later, the implementation of some of these algorithms which varies in the different libraries affect the outputs similar to the parameters.
-\par
-Finally the third and final part of this text will give the results to the project.
-In this we will explain what the quantified errors represent and a quick qualitative assessment of the audios.
-***As a reminder, we do not plan on building a model that competes against the current SoTA.
-***Instead we will attempt to find input and target creation techniques that improve the quality of the generated audio.
-\par
-The final part of this thesis contains the appendix and the bibliography.
-In the appendix we give most of the theoretical background necessary to understand the methods used in our research.
-This includes subjects ranging from machine learning, signal processing, the fourier and wavelet transform and a small usage guide for the source code and where to find it.
-\part{Literature Review}
-\chapter{Speech Separation}
-\section{Segmentation vs Attention Problem}
+\subsection{Segmentation vs Attention Problem}
 \qquad Many studies** have been used to divide the problem into more manageable tasks, many of which were included in the experiments made by Cherry himself.
 Thanks to this, the problem has evolved quite a bit since it was first formulated, deviating from its original definition and including all types of noise, not just speech.
 As McDermott mentions in his article\cite{CocktailPartyProblemRevisit}, the problem has been split in two parts, which together engulfs the problem as a whole.
@@ -187,7 +145,7 @@ One of the reasons was just mentioned, but it’s also due to the fact that the 
 This leaves us with a few options, we either limit the problem to certain use cases, or we facilitate the problem adding more information.
 We will consider both of these actions to be “constraints”, as one limits the conditions that could be solved while the other limits possible solutions, requiring more information.
 
-\section{Inverse Problems}
+\subsection{Inverse Problems}
 \qquad An inverse problem refers to reconstructing the source from a generated set of components.
 In this case, we want to reconstruct the separated audios from a generated mixed audio.
 Inverse problems are usually classified by how “Well-Posed” it is, which is also generally used as an indicator of how difficult the problem could be.
@@ -236,7 +194,7 @@ Numerical Implementation
     Although these methods were usually considered fairly inexpensive, we will be using neural networks, which are both expensive computational as well as in the data sense. 
 
 
-\section{Ill-Posed Problems}
+\subsection{Ill-Posed Problems}
 \qquad Let's imagine that we have an audio with two sources that generate noise.
 One is a dog, and the other is a human.
 Both audio have different structures and can be separated by a person with quite little effort.
@@ -261,7 +219,7 @@ Now, however, Ill-Posed problems are very common, in fact it is considered rare 
 It has come to the point where researchers seemingly compare how “Ill-Posed” a problem may be[InverseProblems].
 These extends to Well, mildly Ill and severely Ill-Posed problems.
 
-\section{Constraints}
+\subsection{Constraints}
 \qquad If we continue with our thought experiment from before, what would happen if instead we had two machines that emit static noise of the same type, same volume similar position etc.
 This would be practically impossible to separate without knowing more about the noise being emitted to try and find some structural difference in the two.
 Not only that, but the problem wouldn’t be useful in this broader sense.
@@ -282,149 +240,181 @@ If you use a hypothetical “perfect” model to separate voices and listen to y
 Although this could definitely be easier and give better results, we go back to what we mentioned before when we introduced the cocktail party.
 This constraint in reality mentions a problem with attention, which for now we are considering a different problem.
 
+\section{Document Structure}
+\qquad In this project we will separate our investigation into three parts.
+The first part will review the current literature on the problem, focusing specifically on current processing methods.
+We then explore how previous studies used these methods and the possible affects this has on the results.
+This will be split into 4 Chapters.
+\par
+Chapter 1 will give a short rundown on the current data processing techniques.
+We will explain why data preprocessing is important and what problems occur without it, focusing on audio tasks.
+This chapter is divided into two parts, the first will touch on feature extraction for audio.
+The second part will touch on Normalization.
+\par
+For feature extraction we will need to learn about Spectrograms.
+The Spectrograms can be separated into two commonly used categories: linear and mel-bin.
+Both spectrograms represent audio clips into a 3-D transformations, similar to images.
+A linear spectrogram has a linear frequency dimension while mel-bins represents frequency in logarithmic scale.
+\par
+Chapter 2 will reference one of the problems we currently have in Generating Audio.
+Here we explain why generating audio directly isn't always possible and what the modern solution for these problems currently looks like.
+The critiques given to these current solutions will be based on the literature and on my own personal experience.
+\par
+Chapters 3 and 4 will talk about recent projects.
+Although these projects do not tackle the problem in the same way, they have reasonably good quality in audio.
+Because of this, we will use these studies as a reference to what practices could be used to provide these results.
+Later on we will see that one uses vocoders and the other changes the training target.
+\par
+At the end of these chapters we will state the pros and cons of each methods and briefly show the train of thought that lead to the experiments that we can find in part 2.
+\par Part two contains the methodology that was taken in this study.
+In this we hope to explain the experiment well enough to be replicated in future studies.
+For this we provide a context of the algorithm and how each process was implemented.
+As we will learn later, the implementation of some of these algorithms which varies in the different libraries affect the outputs similar to the parameters.
+\par
+Finally the third and final part of this text will give the results to the project.
+In this we will explain what the quantified errors represent and a quick qualitative assessment of the audios.
+***As a reminder, we do not plan on building a model that competes against the current SoTA.
+***Instead we will attempt to find input and target creation techniques that improve the quality of the generated audio.
+\par
+The final part of this thesis contains the appendix and the bibliography.
+In the appendix we give most of the theoretical background necessary to understand the methods used in our research.
+This includes subjects ranging from machine learning, signal processing, the fourier and wavelet transform and a small usage guide for the source code and where to find it.
+\part*{Temp}
+\part{Literature Review}
+\chapter{Data Processing}
+\chapter{The Audio Generation Problem}
+\chapter{Looking to Listen}
+\chapter{Music-Speech Separation}
+
 \part{Methodology}
-\chapter{Literature Review}
-  \section{Current SoTA with AI}
-    \subsection{Speech Recognition}
-    \subsection{Speech Separation}
-      \subsubsection{Looking to Listen}
-  \section{Feature Extraction and Normalization}
-    \subsection{Do Spectrograms belong in AI?}
-  \section{Data Augmentation}
-  \section{Targets and Masks}
-
-\chapter{Methodology}
-  \section{Computer Requirements}
-  \section{Dataset}
-  \section{Preprocessing}
-  \section{Model}
-  \section{Targets}
-  \section{Error}
-
+\chapter{Libraries}
+\section{Librosa}
+\section{PyTorch}
+\section{TorchAudio}
 \chapter{Implementation}
-  \section{Libraries}
-    \subsection{Librosa}
-    \subsection{PyTorch}
-    \subsection{TorchAudio}
-  \section{Source Code}
-    \subsection{Running Instructions}
+\section{Dataset}
+\section{Model Structure}
+\section{Preprocessing}
+\section{Targets (Tested)}
 
 
 \part{Results}
 \chapter{Results}
-  \section{Initial Dataset}
-    \subsection{Quantified Losses}
-    \subsection{Quality Tests}
-    \subsection{Samples (images and audios)}
-  \section{Transfer learning}
-    \subsection{Quantified Losses}
-    \subsection{Quality Tests}
-    \subsection{Samples (images and audios)}
-  \section{Transfer Learning with fine tuning}
-    \subsection{Quantified Losses}
-    \subsection{Quality Tests}
-    \subsection{Samples (images and audios)}
+\section{Initial Dataset}
+\subsection{Quantified Losses}
+\subsection{Quality Tests}
+\subsection{Samples (images and audios)}
+\section{Transfer learning}
+\subsection{Quantified Losses}
+\subsection{Quality Tests}
+\subsection{Samples (images and audios)}
+\section{Transfer Learning with fine tuning}
+\subsection{Quantified Losses}
+\subsection{Quality Tests}
+\subsection{Samples (images and audios)}
 
 \chapter{Discussion}
-  \section{Future Work}
+\section{Future Work}
 
 \begin{appendices}
-    \chapter{Time Series}
-      \section{Signal Processing}
-      \section{Speech Properties}
-    
-    \chapter{Transforms}
-      \section{Fourier Transform}
-        \subsection{Spectrums}
-        \subsection{Discrete Fourier Transform}
-        \subsection{Short-Time Fourier Transform}
-      \section{Wavelet}
-    
-    \chapter{Spectrograms}
-    \qquad As we saw before, audio can be better represented as mix of different frequencies that define the sound we are hearing. The problem lies in the fact that, in speech, these frequencies change drastically during each conversation, sentence, word and syllable! This means that the perfect spectrogram would need to be a continuous representation of each moment of time and for every frequency.
-    \par
-    This is impossible for various reasons, one being the limitations of computational representations, which forces us to make a discrete representation instead. But even if that wasn’t the case, the fourier transform doesn’t work on single points in time, instead it works on entire signals. That said, we can use the short time fourier transform to give us a spectrogram that is discrete in time. Combined with the discrete fourier transform, we will also have a discrete representation in the frequency axis.
-    \par
-    Spectrograms have 3 dimensions, similar to how images are represented, but not exactly. In any given image there are two dimensions that represent space and one that represents intensity. Meanwhile Spectrograms have one dimension for time, one for frequency and the last represents the strength and sometimes the phase of the frequency signal at that time. Although some writers, the standard tends to place frequency as height, time as width and color as signal intensity in a given point.
-    \par
-    Although this is a great step forward to giving us a better representation of audio, there are still too many parameters that play a role. Each one of these parameters affects how well the spectrogram can correctly contain the information in the audio. Although there are already well established defaults for most human tasks, it still hasn’t been well studied in great part of automated and machine learning tasks.
-    \par
-    The exception to this being Speech Recognition, but even so they haven’t been heavily studied. There are few papers and datasets that can be used to prove when some parameters are better than others or if there are conservitive settings that tend to work consistently in all problems. In the end, some authors question if spectrograms are even the representation that we are looking for for various reasons that we will see in more detail later in Chapter 7.
-    \par
-    For now we'll hide our skepticism and focus on the advantages of using spectrograms. The spectrograms we have been referring to so far are what are called linear-spectrograms. Although these are the simplest and easiest to implement, it is not the only one. We will mention the difference between Amplitude and Decibel Spectrograms as well as Frequency and Mel-Bin Spectrograms.
-      \section{Linear and Log}
-    \qquad The values in amplitude are represented in the “color” dimension, giving us the intensities that we see in the spectrogram image. As we saw in the Second Chapter, the amplitude tells us the strength of the signal. In the spectrogram, however, there may also be a phase value. This is because the signals tend to be represented as a Complex number, which can be expressed in cartesian or polar coordinates.
-    \par
-        \subsection{Amplitude vs Decibels}
-        \subsection{Mel-Bins}
-      \section{The Phase Problem}
-        \subsection{Linear}
-        \subsection{Decibel}
-        \subsection{Mel-bin}
-      \section{Phase Retrieval Techniques}
-        \subsection{Phase Storage}
-        \subsection{Griffin-lin Algorithm}
-        \subsection{Vocoders}
-    
-    \chapter{Machine Learning}
-    \qquad "A machine learning algorithm is an algorithm that is able to learn from data."\cite{DeepLearning}
-    These algorithms search for patterns in the data to discover rules of association that could be used to solve the problem without explicit instructions.
-    This approach turns out to be better, in various task, than previous hard-encoded methods.
-    These older algorithms are usually referred to as traditional methods.
-    \par
-    Most of the success of machine learning systems stem from the fact that it is hard to give a perfect definition of something.
-    To achieve this we would be required to tumble into epistemological questions.
-    Most would agree that a definition of a cat would be incomplete without mentioning a tail, yet a cat without a tail is still a cat.
-    \section{Supervised vs Unsupervised Learning}
-    \qquad Machine Learning algorithms are commonly separated into supervised and unsupervised learning.
-    Even though each of these methods have their pros and cons, most of the current study has focused on developing supervised methods.
-    Part of the reason is because of how data is currently being collected in the real world.
-    \par
-    Apart from these two branches of machine learning there is another call "semi" supervised learning\cite{SemiSupervised}.
-    This approach uses a mix of labeled and unlabeled data items.
-    In real life this allows users to quickly add labels to a dataset.
-    This is done with unsupervised methods, which are later "corrected" by a human user which labels the faulty items. 
-    \par
-    Even though these tools have proven useful in certain problems, including large scale dataset labeling, they are not relevant to this study.
-    \subsection{Supervised Learning}
-    \qquad Supervised learning methods, as we mentioned before, use labeled datasets as training data.
-    This allows the algorithm to repeatedly find patterns which could allow it to gain better insights.
-    The training process for these algorithms is similar to a student studying with a mock exam.
-    \par
-    In this analogy, our mock exam is the same as our dataset.
-    Even so, just like in real life, we elaborating a mock exam isn't always easy. How do we provide questions similar to the real test, without making it too similar?
-    If you told a class of students that the real exam will be exactly the same as the mock, the students would be less inclined to learn the actual concepts necessary to pass the test (or any similar test).
-    Instead, they might try to memorize the answers knowing that this would be enough.
-    \par
-    This same login is what happens when training an algorithm.
-    They don't have a notion of what they are trying to learn but instead what they want to answer.
-    A program is (at least until now) unable to understand that the dataset is just a mock, and that the real test comes after.
-    What's worse, while a normal student would have problems memorizing tests for very long, a computer store these answers with no additional punishment.
-        \subsection{Unsupervised Learning}
-      \section{Advancements}
-        \subsection{AREAS**}
-      \section{Problems}
-        \subsection{Data}
-        \subsection{Interpretability}
-        \subsection{Overfitting}
-        \subsection{Hyper-parameters}
-        \subsection{Computation}
-    
-    \chapter{Deep Learning}
-      \section{Neural Networks}
-        \subsection{Structure}
-          \subsubsection{Inputs}
-          \subsubsection{Weights}
-          \subsubsection{Bias}
-        \subsection{Back-Propagation Algorithm}
-          \subsubsection{Forward Propagation}
-          \subsubsection{Gradients}
-      \section{Image Processing}
-        \subsection{Convolutional Neural Networks}
-        \subsection{Attention}
-      \section{Segmentation}
-        \subsection{Medicine}
-        \subsection{U-Net}
+\chapter{Time Series}
+\section{Signal Processing}
+\section{Speech Properties}
+
+\chapter{Transforms}
+\section{Fourier Transform}
+\subsection{Spectrums}
+\subsection{Discrete Fourier Transform}
+\subsection{Short-Time Fourier Transform}
+\section{Wavelet}
+
+\chapter{Spectrograms}
+\qquad As we saw before, audio can be better represented as mix of different frequencies that define the sound we are hearing. The problem lies in the fact that, in speech, these frequencies change drastically during each conversation, sentence, word and syllable! This means that the perfect spectrogram would need to be a continuous representation of each moment of time and for every frequency.
+\par
+This is impossible for various reasons, one being the limitations of computational representations, which forces us to make a discrete representation instead. But even if that wasn’t the case, the fourier transform doesn’t work on single points in time, instead it works on entire signals. That said, we can use the short time fourier transform to give us a spectrogram that is discrete in time. Combined with the discrete fourier transform, we will also have a discrete representation in the frequency axis.
+\par
+Spectrograms have 3 dimensions, similar to how images are represented, but not exactly. In any given image there are two dimensions that represent space and one that represents intensity. Meanwhile Spectrograms have one dimension for time, one for frequency and the last represents the strength and sometimes the phase of the frequency signal at that time. Although some writers, the standard tends to place frequency as height, time as width and color as signal intensity in a given point.
+\par
+Although this is a great step forward to giving us a better representation of audio, there are still too many parameters that play a role. Each one of these parameters affects how well the spectrogram can correctly contain the information in the audio. Although there are already well established defaults for most human tasks, it still hasn’t been well studied in great part of automated and machine learning tasks.
+\par
+The exception to this being Speech Recognition, but even so they haven’t been heavily studied. There are few papers and datasets that can be used to prove when some parameters are better than others or if there are conservative settings that tend to work consistently in all problems. In the end, some authors question if spectrograms are even the representation that we are looking for for various reasons that we will see in more detail later in Chapter 7.
+\par
+For now we'll hide our skepticism and focus on the advantages of using spectrograms. The spectrograms we have been referring to so far are what are called linear-spectrograms. Although these are the simplest and easiest to implement, it is not the only one. We will mention the difference between Amplitude and Decibel Spectrograms as well as Frequency and Mel-Bin Spectrograms.
+\section{Linear and Log}
+\qquad The values in amplitude are represented in the “color” dimension, giving us the intensities that we see in the spectrogram image. As we saw in the Second Chapter, the amplitude tells us the strength of the signal. In the spectrogram, however, there may also be a phase value. This is because the signals tend to be represented as a Complex number, which can be expressed in cartesian or polar coordinates.
+\par
+\subsection{Amplitude vs Decibels}
+\subsection{Mel-Bins}
+\section{The Phase Problem}
+\subsection{Linear}
+\subsection{Decibel}
+\subsection{Mel-bin}
+\section{Phase Retrieval Techniques}
+\subsection{Phase Storage}
+\subsection{Griffin-lin Algorithm}
+\subsection{Vocoders}
+
+\chapter{Machine Learning}
+\qquad "A machine learning algorithm is an algorithm that is able to learn from data."\cite{DeepLearning}
+These algorithms search for patterns in the data to discover rules of association that could be used to solve the problem without explicit instructions.
+This approach turns out to be better, in various task, than previous hard-encoded methods.
+These older algorithms are usually referred to as traditional methods.
+\par
+Most of the success of machine learning systems stem from the fact that it is hard to give a perfect definition of something.
+To achieve this we would be required to tumble into epistemological questions.
+Most would agree that a definition of a cat would be incomplete without mentioning a tail, yet a cat without a tail is still a cat.
+\section{Supervised vs Unsupervised Learning}
+\qquad Machine Learning algorithms are commonly separated into supervised and unsupervised learning.
+Even though each of these methods have their pros and cons, most of the current study has focused on developing supervised methods.
+Part of the reason is because of how data is currently being collected in the real world.
+\par
+Apart from these two branches of machine learning there is another call "semi" supervised learning**cite{SemiSupervised}.
+This approach uses a mix of labeled and unlabeled data items.
+In real life this allows users to quickly add labels to a dataset.
+This is done with unsupervised methods, which are later "corrected" by a human user which labels the faulty items. 
+\par
+Even though these tools have proven useful in certain problems, including large scale dataset labeling, they are not relevant to this study.
+\subsection{Supervised Learning}
+\qquad Supervised learning methods, as we mentioned before, use labeled datasets as training data.
+This allows the algorithm to repeatedly find patterns which could allow it to gain better insights.
+The training process for these algorithms is similar to a student studying with a mock exam.
+\par
+In this analogy, our mock exam is the same as our dataset.
+Even so, just like in real life, we elaborating a mock exam isn't always easy. How do we provide questions similar to the real test, without making it too similar?
+If you told a class of students that the real exam will be exactly the same as the mock, the students would be less inclined to learn the actual concepts necessary to pass the test (or any similar test).
+Instead, they might try to memorize the answers knowing that this would be enough.
+\par
+This same login is what happens when training an algorithm.
+They don't have a notion of what they are trying to learn but instead what they want to answer.
+A program is (at least until now) unable to understand that the dataset is just a mock, and that the real test comes after.
+What's worse, while a normal student would have problems memorizing tests for very long, a computer store these answers with no additional punishment.
+\subsection{Unsupervised Learning}
+\section{Advancements}
+\subsection{AREAS**}
+\section{Problems}
+\subsection{Data}
+\subsection{Interpretability}
+\subsection{Overfitting}
+\subsection{Hyper-parameters}
+\subsection{Computation}
+
+\chapter{Deep Learning}
+\section{Neural Networks}
+\subsection{Structure}
+\subsubsection{Inputs}
+\subsubsection{Weights}
+    \subsubsection{Bias}
+\subsection{Back-Propagation Algorithm}
+    \subsubsection{Forward Propagation}
+    \subsubsection{Gradients}
+\section{Image Processing}
+\subsection{Convolutional Neural Networks}
+\subsection{Attention}
+\section{Segmentation}
+\subsection{Medicine}
+\subsection{U-Net}
+\chapter{Source Code}
+\section{Running Instructions}
 \end{appendices}
 
 \bibliography{Thesis}
