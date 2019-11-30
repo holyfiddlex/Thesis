@@ -99,7 +99,7 @@ The short and imaginary story above gives us an example of how we, as humans, so
 Thanks to evolution, humans can it so effortless, in fact, that most people don’t even stop to appreciate how complicated the task actually is.
 \par
 Its difficulty, however, is not the reason it is so widely studied.
-In fact, this small problem seems to be the barrier that has kept us from advancing in the automation of automation, or at least in the way we would like.
+In fact, this small problem seems to be the barrier that has kept us from advancing in the automation of speech related tasks, or at least in the way we would like.
 The cocktail party is not only present in sound, but in just about any signal processing problem, from medical scanning to telecommunications\cite{CocktailPartyProblemRevisit}, noise always seems to find its way into our sensors.
 \par
 That is why a general solution to this problem will not only allow us to improve greatly in audio related tasks, such as speech recognition, transcriptions, audio classification, and audio/speech enhancements, but also in various fields like medical analysis and seismology.
@@ -204,7 +204,7 @@ A wide variety of audios include at least two people talking.
 This is harder to separate, sometimes even for humans, especially if the two individuals have similar voices and speak in a similar manner.
 \par
     The difficulty of the Cocktail Party problem is that it is Ill-Posed.
-    The terms Ill and Well-Posed problems was first coined by Hadamard, Jacques, a French mathematician born in the mid 1800’s.
+    The terms Ill and Well-Posed problems was first coined by Jacques Hadamard, a French mathematician born in the mid 1800’s.
     According to his definition, a problem is considered to be Well-Posed if: 
 \begin{itemize}
     \item For any input there is a solution
@@ -249,10 +249,10 @@ This will be split into 4 Chapters.
 Chapter 1 will give a short rundown on the current data processing techniques.
 We will explain why data preprocessing is important and what problems occur without it, focusing on audio tasks.
 This chapter is divided into two parts, the first will touch on feature extraction for audio.
-The second part will touch on Normalization.
+The second part will touch on normalization.
 \par
-For feature extraction we will need to learn about Spectrograms.
-The Spectrograms can be separated into two commonly used categories: linear and mel-bin.
+For feature extraction we will need to learn about spectrograms.
+The spectrograms can be separated into two commonly used categories: linear and mel-bin.
 Both spectrograms represent audio clips into a 3-D transformations, similar to images.
 A linear spectrogram has a linear frequency dimension while mel-bins represents frequency in logarithmic scale.
 \par
@@ -278,7 +278,7 @@ In this we will explain what the quantified errors represent and a quick qualita
 \par
 The final part of this thesis contains the appendix and the bibliography.
 In the appendix we give most of the theoretical background necessary to understand the methods used in our research.
-This includes subjects ranging from machine learning, signal processing, the fourier and wavelet transform and a small usage guide for the source code and where to find it.
+This includes subjects ranging from machine learning, signal processing, the Fourier and wavelet transform and a small usage guide for the source code and where to find it.
 \part*{Temp}
 \part{Literature Review}
 \chapter{Data Processing}
@@ -329,19 +329,37 @@ This includes subjects ranging from machine learning, signal processing, the fou
 \section{Wavelet}
 
 \chapter{Spectrograms}
-\qquad As we saw before, audio can be better represented as mix of different frequencies that define the sound we are hearing. The problem lies in the fact that, in speech, these frequencies change drastically during each conversation, sentence, word and syllable! This means that the perfect spectrogram would need to be a continuous representation of each moment of time and for every frequency.
+\qquad As we saw before, audio can be better represented as mix of different frequencies that define the sound we are hearing.
+The problem lies in the fact that, in speech, these frequencies change drastically during each conversation, sentence, word and syllable!
+This means that the perfect spectrogram would need to be a continuous representation of each moment of time and for every frequency.
 \par
-This is impossible for various reasons, one being the limitations of computational representations, which forces us to make a discrete representation instead. But even if that wasn’t the case, the fourier transform doesn’t work on single points in time, instead it works on entire signals. That said, we can use the short time fourier transform to give us a spectrogram that is discrete in time. Combined with the discrete fourier transform, we will also have a discrete representation in the frequency axis.
+This is impossible for various reasons, one being the limitations of computational representations, which forces us to make a discrete representation instead.
+But even if that wasn’t the case, the Fourier transform doesn’t work on single points in time, instead it works on entire signals.
+That said, we can use the short time Fourier transform to give us a spectrogram that is discrete in time.
+Combined with the discrete Fourier transform, we will also have a discrete representation in the frequency axis.
 \par
-Spectrograms have 3 dimensions, similar to how images are represented, but not exactly. In any given image there are two dimensions that represent space and one that represents intensity. Meanwhile Spectrograms have one dimension for time, one for frequency and the last represents the strength and sometimes the phase of the frequency signal at that time. Although some writers, the standard tends to place frequency as height, time as width and color as signal intensity in a given point.
+Spectrograms have 3 dimensions, similar to how images are represented, but not exactly.
+In any given image there are two dimensions that represent space and one that represents intensity.
+Meanwhile spectrograms have one dimension for time, one for frequency and the last represents the strength and sometimes the phase of the frequency signal at that time.
+Although some writers define each dimension differently, the standard tends to place frequency as height, time as width and color as signal intensity in a given point.
 \par
-Although this is a great step forward to giving us a better representation of audio, there are still too many parameters that play a role. Each one of these parameters affects how well the spectrogram can correctly contain the information in the audio. Although there are already well established defaults for most human tasks, it still hasn’t been well studied in great part of automated and machine learning tasks.
+Although this is a great step forward to giving us a better representation of audio, there are still too many parameters that play a role.
+Each one of these parameters affects how well the spectrogram can correctly contain the information in the audio.
+Although there are already well established defaults for most human tasks, it still hasn’t been well studied in great part of automated and machine learning tasks.
 \par
-The exception to this being Speech Recognition, but even so they haven’t been heavily studied. There are few papers and datasets that can be used to prove when some parameters are better than others or if there are conservative settings that tend to work consistently in all problems. In the end, some authors question if spectrograms are even the representation that we are looking for for various reasons that we will see in more detail later in Chapter 7.
+The exception to this being Speech Recognition, but even so they haven’t been heavily studied.
+There are few papers and datasets that can be used to prove when some parameters are better than others or if there are conservative settings that tend to work consistently in all problems.
+In the end, some authors question if spectrograms are even the representation that we are looking for for various reasons that we will see in more detail later in Chapter 7.
 \par
-For now we'll hide our skepticism and focus on the advantages of using spectrograms. The spectrograms we have been referring to so far are what are called linear-spectrograms. Although these are the simplest and easiest to implement, it is not the only one. We will mention the difference between Amplitude and Decibel Spectrograms as well as Frequency and Mel-Bin Spectrograms.
+For now we'll hide our skepticism and focus on the advantages of using spectrograms.
+The spectrograms we have been referring to so far are what are called linear-spectrograms.
+Although these are the simplest and easiest to implement, it is not the only one.
+We will mention the difference between amplitude and decibel spectrograms as well as frequency and mel-bin spectrograms.
 \section{Linear and Log}
-\qquad The values in amplitude are represented in the “color” dimension, giving us the intensities that we see in the spectrogram image. As we saw in the Second Chapter, the amplitude tells us the strength of the signal. In the spectrogram, however, there may also be a phase value. This is because the signals tend to be represented as a Complex number, which can be expressed in cartesian or polar coordinates.
+\qquad The values in amplitude are represented in the “color” dimension, giving us the intensities that we see in the spectrogram image.
+As we saw in the Second Chapter, the amplitude tells us the strength of the signal.
+In the spectrogram, however, there may also be a phase value.
+This is because the signals tend to be represented as a Complex number, which can be expressed in cartesian or polar coordinates.
 \par
 \subsection{Amplitude vs Decibels}
 \subsection{Mel-Bins}
@@ -403,10 +421,10 @@ What's worse, while a normal student would have problems memorizing tests for ve
 \subsection{Structure}
 \subsubsection{Inputs}
 \subsubsection{Weights}
-    \subsubsection{Bias}
+\subsubsection{Bias}
 \subsection{Back-Propagation Algorithm}
-    \subsubsection{Forward Propagation}
-    \subsubsection{Gradients}
+\subsubsection{Forward Propagation}
+\subsubsection{Gradients}
 \section{Image Processing}
 \subsection{Convolutional Neural Networks}
 \subsection{Attention}
