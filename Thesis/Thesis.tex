@@ -278,24 +278,26 @@ In this we will explain what the quantified errors represent and a quick qualita
 The final part of this thesis contains the appendix and the bibliography.
 In the appendix we give most of the theoretical background necessary to understand the methods used in our research.
 This includes subjects ranging from machine learning, signal processing, the Fourier and wavelet transform and a small usage guide for the source code and where to find it.
+
 \part*{Temp}
 \part{Literature Review}
+
 \chapter{Data Preparation}
-Transforming and processing data is an important part of deep learning.
+\qquad Transforming and processing data is an important part of deep learning.
 Without this step, most models widely under perform in their tasks while others will not work at all.
 Even tasks like categorizing involve some sort of preprocessing of data like one-hot encoding.
 \par
 This stays true for audio.
 In fact it could be more true than many other machine learning problems.
-Finding the correct feature extraction methods for audio has led to quite a few barriers in the area.
-Although there are still many unanswered questions when it comes to preprocessing audio, the literature still offers some hints on which approaches could work better than others.
+Most audio files come with different parameters, lengths, file formats, volumes and sampling rates.
+Finding the correct parameters and feature extraction methods for audio has led to quite a few barriers in the area.
 \par
+Although there are still many unanswered questions when it comes to preprocessing audio, the literature still offers some hints on which approaches could work better than others.
 One example of this is data representation.
 In the digital world, audio can be represented by a sequence of numbers and usually a sample rate.
 With a fixed sample rate, we can consider the sequence to be a simple time series.
-Most deep learning processes involving time series make use of recurrent neural networks that receive one or more of these data points.
 \par
-With audio, however, this turns out to not be enough.
+Most deep learning processes involving time series make use of recurrent neural networks that receive one or more of these data points, with audio, however, this turns out to not be enough.
 Even simple binary audio classification has a hard time achieving promising, let alone reasonable results. *** % Get Proof of this
 Not only that, it is also extremely slow to process all of these data points.
 If we were to consider a small 10 second audio clip at a 22050 sampling rate (half of what is normally used) this will still give us a 220500 data point time series.
@@ -305,15 +307,32 @@ Because of this, part of our research will explore different parameters.
 Even with the limited study on these values, we can still sometimes rely on expert recommendations to give us an idea of what parameters would reveal better results.
 For now, we will review data transformations necessary to input into a neural network.
 After that we will explore audio data preparation techniques, including data wrangling and feature extraction.
-\section{Audio Structure}
-Quite a few preprocessing 
-\subsection{Data Length}
+
+\section{Data wrangling}
+\qquad Most audio files can be expressed with just 3 data objects. File name, list of data points, and the sampling rate.
+From these three we can create more data, especially if the data was preprocessed correctly.
+For example, the file name can serve as a way to easily store the correct classification categories.
+\par
+One of the most important components in deep learning tends to be the dataset.
+The data set needs to be correctly collected and big enough to allow the model to generalize characteristics.
+To allow the data to come from different sources and still have similar formats it is important to "wrangle" the data.
+\par
+Data wrangling consists of is making sure that the data has a specific format. *** % Link to appendix and reference
+For audio this means keeping certain aspects of the audio files consistent.
+Below we will mention most of the common data wrangling steps that are used in various papers.
 \subsection{Sampling Rate}
+In and audio file, the sampling rate determines how many data points result in one second of audio.
+These values usually range between 22050 and 48000, with the most common value being 44100, or half the usual minimum.
+
+\subsection{Duration}
+The first thing we can notice about an audio file is how long the audio clip is.
+As you can guess, this depends on how many data points the audio sequence has, but it also depends greatly on the sampling rate.
+To 
 \subsection{Normalization}
 \subsection{Phase}
 \section{Spectrogram}
 \par
-Like we mentioned before, using crude audio files for deep learning has not had success in the field.
+\qquad Like we mentioned before, using crude audio files for deep learning has not had success in the field.
 One solution to this is to use feature extraction methods, which "digests" the data into a more learnable representation.
 Amongst these methods, spectrograms have become the preferred audio representation for Machine Learning.
 \par
@@ -324,6 +343,7 @@ There are many types of spectrograms, each one including even more parameters wh
 Most of the current research that revolves around correct parameter settings focus on classification, with others focusing on transcription.
 This leaves us with a limited idea as to how we should set our parameters for certain studies like the one in this paper.
 \par
+
 \chapter{The Audio Generation Problem}
 \chapter{Looking to Listen}
 \chapter{Music-Speech Separation}
