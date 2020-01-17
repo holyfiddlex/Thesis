@@ -13,7 +13,6 @@
 \setlength{\parskip}{1em}
 \setcounter{chapter}{-1}
 
-
 \begin{document}
 
 \newcommand{\titlename}{Data Processing for the Cocktail Party Problem}
@@ -281,7 +280,31 @@ In the appendix we give most of the theoretical background necessary to understa
 This includes subjects ranging from machine learning, signal processing, the Fourier and wavelet transform and a small usage guide for the source code and where to find it.
 \part*{Temp}
 \part{Literature Review}
-\chapter{Data Processing}
+\chapter{Data Preparation}
+Transforming and processing data is an important part of deep learning.
+Without this step, most models widely under perform in their tasks while others will not work at all.
+Even tasks like categorizing involve some sort of preprocessing of data like one-hot encoding.
+\par
+This stays true for audio.
+In fact it could be more true than many other machine learning problems.
+Finding the correct feature extraction methods for audio has led to quite a few barriers in the area.
+Although there are still many unanswered questions when it comes to preprocessing audio, the literature still offers some hints on which approaches could work better than others.
+\par
+One example of this is data representation.
+In the digital world, audio can be represented by a sequence of numbers and usually a sample rate.
+With a fixed sample rate, we can consider the sequence to be a simple time series.
+Most deep learning processes involving time series make use of recurrent neural networks that receive one or more of these data points.
+\par
+With audio, however, this turns out to not be enough.
+Even simple binary audio classification has a hard time achieving promising, let alone reasonable results. *** % Get Proof of this
+Not only that, it is also extremely slow to process all of these data points.
+If we were to consider a small 10 second audio clip at a 22050 sampling rate (half of what is normally used) this will still give us a 220500 data point time series.
+Generative models suffer an even greater overhead, which is a great critique to models like WaveNet which take a data by data generation approach. *** % Cite WaveNet
+\par
+Because of this, part of our research will explore different parameters.
+Even with the limited study on these values, we can still sometimes rely on expert recommendations to give us an idea of what parameters would reveal better results.
+For now, we will review data transformations necessary to input into a neural network.
+After that we will explore audio data preparation techniques, including data wrangling and feature extraction.
 \chapter{The Audio Generation Problem}
 \chapter{Looking to Listen}
 \chapter{Music-Speech Separation}
