@@ -321,14 +321,33 @@ Data wrangling consists of is making sure that the data has a specific format. *
 For audio this means keeping certain aspects of the audio files consistent.
 Below we will mention most of the common data wrangling steps that are used in various papers.
 \subsection{Sampling Rate}
-In and audio file, the sampling rate determines how many data points result in one second of audio.
-These values usually range between 22050 and 48000, with the most common value being 44100, or half the usual minimum.
+\qquad In most audio recordings, the sample rate determines how many data points are in a second of audio.
+This means that the data points in the time sequence depend on the sample rate being used.
+If the sampling rate is not correct, or if you change it directly, it will change the speed and quality of the audio.
+Although at first sight this doesn't seem too bad, if done by hand tends to sound unnatural depending on how drastic the change was.
+\par
+Because of this, setting up a standard sampling rate for all of the clips in our data set can get a bit complicated.
+Luckily most datasets set up all of the audios to have the same sampling rate.
+Sampling rates also tend to have values of 22050, 44100 or 48000, making it easy to get a dataset with the same sampling rate.
+\par
+Still, for certain datasets, or when constructing you own, you will need to take a different approach.
+If you want to down sample your audio to a sampling rate that is perfectly divisible by it's original, you can simply skip data points.
+For example, if you want to down sample 44100 to 22050, you only have to skip every other data point in the time sequence and then set your new sample rate.
+\par
+Still, it is useful to be able to resample your audio to what ever sample rate you need.
+To do this, you can use a resampling algorithm, the one most recorded in most public repositories is a poly-phase resampling algorithm. *** % Place in appendix
+The algorithm is not difficult to implement but can also be found in certain libraries that can be used for signal processing, like scipy. *** % Link to scipy
 
-\subsection{Duration}
-The first thing we can notice about an audio file is how long the audio clip is.
-As you can guess, this depends on how many data points the audio sequence has, but it also depends greatly on the sampling rate.
-To 
+\subsection{Clipping and Padding}
+Sometimes, the length of the times series isn't what our model was expecting.
+Even recurrent neural models tend to have a fixed input and just cycle endlessly until the input is finished.
+Because of this, unless we process the data points one at a time, we could find ourselves with an audio that needs to be padded.
+
+We already mentioned the down sides to using this type of approach, and although it's generative quality is great, we cannot fully depend on these algorithms for all tasks.
+Another problem is that sometimes we don't have a list of individual audios, but instead only a few extensive audios that need to be processed in smaller clips.
+
 \subsection{Normalization}
+In the data time series, the amplitude of the audio wave is set by 
 \subsection{Phase}
 \section{Spectrogram}
 \par
