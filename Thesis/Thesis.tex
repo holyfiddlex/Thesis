@@ -279,10 +279,9 @@ The final part of this thesis contains the appendix and the bibliography.
 In the appendix we give most of the theoretical background necessary to understand the methods used in our research.
 This includes subjects ranging from machine learning, signal processing, the Fourier and wavelet transform and a small usage guide for the source code and where to find it.
 
-\part*{Temp}
 \part{Literature Review}
 
-\chapter{Data Preparation}
+\chapter{Audio Data Preparation}
 \qquad Transforming and processing data is an important part of deep learning.
 Without this step, most models widely under perform in their tasks while others will not work at all.
 Even tasks like categorizing involve some sort of preprocessing of data like one-hot encoding.
@@ -349,8 +348,34 @@ Another problem is that sometimes we don't have a list of individual audios, but
 \subsection{Normalization}
 In the data time series, the amplitude of the audio wave is set by 
 \subsection{Phase}
-\section{Spectrogram}
+\qquad \section{Feature extraction}
+In machine learning, feature extraction is the process of representing data in a more "understandable" way.
+In audio this is usually done by applying a short-time fourier transform (stft) as well as other transformations.
+Next we will give a brief explanation on how the stft works, but first we need to make sure we know what the fourier transform does.
+\subsection{Spectrums}
+\qquad The fourier transform is used to decompose an signal into it's base sine wave components.
+If, let's say, we have the signal composed of 2 sine waves like below, the fourier transform can used to find that the signals sin(2t) and sin(3t) are present.
+The second image is of the output, which is called a spectrum, where we can see that the peaks of the plot represent the sine components we are looking for.
+This way, we can process a signal and replace it with it's components.
 \par
+There are two problems with using the fourier transform directly into an audio  on 
+\subsection{Spectrogram}
+Once we apply the stft to an audio file, we will have what is called a spectrogram.
+To get an idea of how the two differ, you can see the images below. The first image is the plotted time series of a short audio sample.
+The second is a plotted image of the spectrogram.
+\par
+The second image has more dimensions.
+In fact, the image doesn't exactly give us all of the information because the intensities have to be converted from complex numbers to it's magnitude values.
+Regardless of this, we still have 3 dimensions only this time they are time, frequencies and intensity.
+\par
+This new dimension for frequencies is what make analyzing a spectrogram much easier.
+Here we can clearly see the difference between frequencies and sometimes even make out certain noises, if the image resolution is correct.
+Below we can see an example of how the "sh" sound would look like.
+
+As you can imagine, if we can distinguish certain sounds from this spectrogram without any expert knowledge, it can be much easier for our model to make predictions.
+The spectrogram still depends on the parameters we use in the stft.
+Because there are not many studies that explore these parameters most papers rely on the default parameters for these transforms.
+\subsection{Mel-Spectrogram}
 \qquad Like we mentioned before, using crude audio files for deep learning has not had success in the field.
 One solution to this is to use feature extraction methods, which "digests" the data into a more learnable representation.
 Amongst these methods, spectrograms have become the preferred audio representation for Machine Learning.
