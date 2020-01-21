@@ -296,29 +296,32 @@ One example of this is data representation.
 In the digital world, audio can be represented by a sequence of numbers and usually a sample rate.
 With a fixed sample rate, we can consider the sequence to be a simple time series.
 \par
-Most deep learning processes involving time series make use of recurrent neural networks that receive one or more of these data points, with audio, however, this turns out to not be enough.
+Most deep learning processes involving time series make use of recurrent neural networks that receive one or more of these data points, with audio.
+However, at it turns out, this is not enough.
 Even simple binary audio classification has a hard time achieving promising, let alone reasonable results. *** % Get Proof of this
-Not only that, it is also extremely slow to process all of these data points.
-If we were to consider a small 10 second audio clip at a 22050 sampling rate (half of what is normally used) this will still give us a 220500 data point time series.
-Generative models suffer an even greater overhead, which is a great critique to models like WaveNet which take a data by data generation approach. *** % Cite WaveNet
 \par
-Because of this, part of our research will explore different parameters.
+This is not the only problem we face. Apart from that, it is also extremely slow to process all of these data points.
+If we were to consider a small 10 second audio clip at a 22050 sampling rate (half of what is normally used) this will still give us a 220500 data point time series.
+Generative models suffer an even greater overhead, which is a great critique to models like WaveNet which take a point by point generation approach. *** % Cite WaveNet
+\par
+Because of this, part of the research implies exploring different parameters.
 Even with the limited study on these values, we can still sometimes rely on expert recommendations to give us an idea of what parameters would reveal better results.
+\par
 For now, we will review data transformations necessary to input into a neural network.
 After that we will explore audio data preparation techniques, including data wrangling and feature extraction.
 
 \section{Data wrangling}
-\qquad Most audio files can be expressed with just 3 data objects. File name, list of data points, and the sampling rate.
+\qquad Data wrangling consists of is making sure that the data has a specific format. *** % Link to appendix and reference
+For audio this means keeping certain aspects of the audio files consistent.
+Below we will mention most of the common data wrangling steps that are used in various papers.
+\par
+Most audio files can be expressed with just 3 data objects. File name, list of data points, and the sampling rate.
 From these three we can create more data, especially if the data was preprocessed correctly.
 For example, the file name can serve as a way to easily store the correct classification categories.
 \par
 One of the most important components in deep learning tends to be the dataset.
 The data set needs to be correctly collected and big enough to allow the model to generalize characteristics.
 To allow the data to come from different sources and still have similar formats it is important to "wrangle" the data.
-\par
-Data wrangling consists of is making sure that the data has a specific format. *** % Link to appendix and reference
-For audio this means keeping certain aspects of the audio files consistent.
-Below we will mention most of the common data wrangling steps that are used in various papers.
 \subsection{Sampling Rate}
 \qquad In most audio recordings, the sample rate determines how many data points are in a second of audio.
 This means that the data points in the time sequence depend on the sample rate being used.
@@ -338,18 +341,17 @@ To do this, you can use a resampling algorithm, the one most recorded in most pu
 The algorithm is not difficult to implement but can also be found in certain libraries that can be used for signal processing, like scipy. *** % Link to scipy
 
 \subsection{Clipping and Padding}
-Sometimes, the length of the times series isn't what our model was expecting.
+\qquad Sometimes, the length of the times series isn't what our model was expecting.
 Even recurrent neural models tend to have a fixed input and just cycle endlessly until the input is finished.
 Because of this, unless we process the data points one at a time, we could find ourselves with an audio that needs to be padded.
-
+\par
 We already mentioned the down sides to using this type of approach, and although it's generative quality is great, we cannot fully depend on these algorithms for all tasks.
 Another problem is that sometimes we don't have a list of individual audios, but instead only a few extensive audios that need to be processed in smaller clips.
-
+\par
 \subsection{Normalization}
 In the data time series, the amplitude of the audio wave is set by 
-\subsection{Phase}
-\qquad \section{Feature extraction}
-In machine learning, feature extraction is the process of representing data in a more "understandable" way.
+\section{Feature extraction}
+\qquad In machine learning, feature extraction is the process of representing data in a more "understandable" way.
 In audio this is usually done by applying a short-time fourier transform (stft) as well as other transformations.
 Next we will give a brief explanation on how the stft works, but first we need to make sure we know what the fourier transform does.
 \subsection{Spectrums}
@@ -371,7 +373,7 @@ Regardless of this, we still have 3 dimensions only this time they are time, fre
 This new dimension for frequencies is what make analyzing a spectrogram much easier.
 Here we can clearly see the difference between frequencies and sometimes even make out certain noises, if the image resolution is correct.
 Below we can see an example of how the "sh" sound would look like.
-
+\par
 As you can imagine, if we can distinguish certain sounds from this spectrogram without any expert knowledge, it can be much easier for our model to make predictions.
 The spectrogram still depends on the parameters we use in the stft.
 Because there are not many studies that explore these parameters most papers rely on the default parameters for these transforms.
