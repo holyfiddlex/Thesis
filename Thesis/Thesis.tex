@@ -310,18 +310,36 @@ Even with the limited study on these values, we can still sometimes rely on expe
 For now, we will review data transformations necessary to input into a neural network.
 After that we will explore audio data preparation techniques, including data wrangling and feature extraction.
 
-\section{Data wrangling}
-\qquad Data wrangling consists of is making sure that the data has a specific format. *** % Link to appendix and reference
-For audio this means keeping certain aspects of the audio files consistent.
-Below we will mention most of the common data wrangling steps that are used in various papers.
+\section{Data Wrangling}
+\qquad In deep learning, data wrangling, also known as data munging, consists of changing the data in a way that is convenient to be processed by the model. *** % Link to appendix and reference https://www.xenonstack.com/blog/data-preparation/
+Usually includes taking care of missing, noisy, and inconsistent data in out dataset.
+This process can be manual, but because machine learning and, more specifically, deep learning models tend to have large datasets, it is better to automate the process to avoid wasting time and remove possible human errors though repetition.
 \par
-Most audio files can be expressed with just 3 data objects. File name, list of data points, and the sampling rate.
-From these three we can create more data, especially if the data was preprocessed correctly.
-For example, the file name can serve as a way to easily store the correct classification categories.
+That is why various techniques have been developed to solve these problems automatically.
+An important and sometimes difficult decision can be choosing which data wrangling method to use.
+Thankfully most of these are easy to implement with any modern scripting language, which allows us to test and see which methods work better than others empirically.
 \par
-One of the most important components in deep learning tends to be the dataset.
-The data set needs to be correctly collected and big enough to allow the model to generalize characteristics.
-To allow the data to come from different sources and still have similar formats it is important to "wrangle" the data.
+One example of how data wrangling could look like is making sure that the data all contain the same dimensions.
+This is easier to demonstrate with images, where we tend to resize the images in order to see them in the same shape.
+Below we can see the difference between an image with *** dimensions and the same image resized to ***.
+\par
+*** %images resized
+\par
+A good question to be asked at this point is, what happens if we don't wrangle our data?
+For cases in which the data is missing, it's likely we will get an error due to trying to access a part of memory that doesn't exist.
+Because of this we are obviously force to fix this problem one way or another before being able to use our dataset, even if we just discard incomplete items.
+\par
+For noisy and inconsistent data, however, we might be able to run our model but receive poor results in training.
+The noise could be large enough to make it harder for the model to find patterns in the data.
+For inconsistent data one value could mean different things depending on how the data was collected, leading to confusion trying to optimize our values.
+\par
+These ideas can be applied to all data, including audio.
+Audio needs to be resized, normalized and even transformed to similar data types before we can dependably use it in our learning process.
+We can also find corrupt or incorrect files in the dataset that need to be removed or corrected.
+\par
+Below we will mention a few of the processes that are used in certain papers and that seem important for most audio related tasks.
+This includes removing noisy backgrounds, normalizing, resampling, removing corrupt files and clipping/padding.
+
 \subsection{Sampling Rate}
 \qquad In most audio recordings, the sample rate determines how many data points are in a second of audio.
 This means that the data points in the time sequence depend on the sample rate being used.
