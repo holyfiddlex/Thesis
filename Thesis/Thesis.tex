@@ -339,10 +339,12 @@ We can also find corrupt or incorrect files in the dataset that need to be remov
 \par
 Below we will mention a few of the processes that are used in certain papers and that seem important for most audio related tasks.
 This includes removing noisy backgrounds, normalizing, resampling, removing corrupt files and clipping/padding.
+To get a better idea on how it is applied in audio, we will focus on sampling rate, file types, duration (clipping and padding) normalization and noise removal.
 
 \subsection{Sampling Rate}
 \qquad In most audio recordings, the sample rate determines how many data points are in a second of audio.
 This means that the data points in the time sequence depend on the sample rate being used.
+\par
 If the sampling rate is not correct, or if you change it directly, it will change the speed and quality of the audio.
 Although at first sight this doesn't seem too bad, if done by hand tends to sound unnatural depending on how drastic the change was.
 \par
@@ -357,6 +359,15 @@ For example, if you want to down sample 44100 to 22050, you only have to skip ev
 Still, it is useful to be able to resample your audio to what ever sample rate you need.
 To do this, you can use a resampling algorithm, the one most recorded in most public repositories is a poly-phase resampling algorithm. *** % Place in appendix
 The algorithm is not difficult to implement but can also be found in certain libraries that can be used for signal processing, like scipy. *** % Link to scipy
+\par
+In python, it is somewhat accepted that the normal resampling function that comes with the common signal processing libraries is not good enough. *** % https://signalsprocessed.blogspot.com/2016/08/audio-resampling-in-python.html
+Instead, polyphase sampling is preferred due to it's efficiency and cleaner results.
+Although there are still certain problems found in the algorithm found in python libraries, it still presents a great improvement without having to climb down the deep rabbit hole that is up and down sampling theory. *** % blog where there was a critique http://signalsprocessed.blogspot.com/2017/05/resampling-in-python-electric-bugaloo.html
+% also a link to the official documentation saying that poly is faster than resample https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.resample_poly.html
+\par
+Polyphase sampling first finds the least common multiple of the old and new sample rates.
+Then it resamples the signal in the interpolation of the repeated points taken.
+Using this method, if the new sample rate is a divisor of the old we have the exact same result that was mentioned before. *** % Pointer to third paragraph of subsection.
 
 \subsection{Clipping and Padding}
 \qquad Sometimes, the length of the times series isn't what our model was expecting.
