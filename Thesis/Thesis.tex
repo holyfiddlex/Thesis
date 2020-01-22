@@ -377,8 +377,30 @@ Because of this, unless we process the data points one at a time, we could find 
 We already mentioned the down sides to using this type of approach, and although it's generative quality is great, we cannot fully depend on these algorithms for all tasks.
 Another problem is that sometimes we don't have a list of individual audios, but instead only a few extensive audios that need to be processed in smaller clips.
 \par
+Clipping a signal is relatively simple and doesn't cause us very many problems.
+Most object-oriented programming languages express these signals as arrays which can manage indexing.
+In this case python is no different and can be used in the same way to cut a file.
+\par
+Padding, as it turns out, can be a bit more complicated.
+Some of these problems occur due to the fact that not all audio files have the same type of "silent noise".
+That is, most of the time audio doesn't have complete silence, meaning that the silence isn't usually filled with zeroes.
+\par
+Although one way to obtain consistency in our files is to filter any low values from the audio, bringing the silence down to zero, there are other reasons we wouldn't want this.
+Most of these reason will be seen in later sections, but leaving the silence in zeroes doesn't allow us to use certain operators like division, logarithms or finding the phase of a complex number.
+\par
+Adding zeroes also allows for data leakage to occur, which could reduce our performance outside of training.  %Data Leakage in appendix
+Sadly to avoid this we would need to be able to generate just the right amount of noise in the correct distribution depending on the ambient noise that is found.
+\par
+Because of this, there is no formal solution or standard as to how exactly one should pad audio, or at least not for machine learning.
+In a later chapter we will see how we decided to pad the audio to solve the problems that were presented as well as the problems this could cause.
+
 \subsection{Normalization}
 In the data time series, the amplitude of the audio wave is set by 
+
+\subsection{Corrupt Files}
+
+\subsection{Background Noise}
+
 \section{Feature extraction}
 \qquad In machine learning, feature extraction is the process of representing data in a more "understandable" way.
 In audio this is usually done by applying a short-time fourier transform (stft) as well as other transformations.
